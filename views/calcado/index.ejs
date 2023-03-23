@@ -1,0 +1,48 @@
+<%- include('../partials/header.ejs') %>
+
+<body>
+
+    <div class="container">
+
+        <%- include('../partials/menu.ejs') %>
+
+        <div class="card mt-3">
+
+            <div class="card-header">
+                <h3>CADASTRO DE CALÇADO</h3>
+            </div>
+
+            <div class="card-body">
+
+                <form action="http://localhost:3000/cadastrarCalcados" method="post">
+
+                    <label for="nome_calcado"></label>
+                    <input class="form-control" type="text" 
+                    name="nome_calcado" id="nome_calcado"
+                    placeholder="NOME DO CALÇADO">
+
+                    <label for="marca_calcado"></label>
+                    <input class="form-control" type="text" 
+                    name="marca_calcado" id="marca_calcado"
+                    placeholder="MARCA DO CALÇADO">
+
+                    <label for="valor_calcado"></label>
+                    <input class="form-control" type="number" 
+                    name="valor_calcado" id="valor_calcado"
+                    placeholder="VALOR DO CALÇADO">
+
+                    <button class="btn btn-success mt-3">CADASTRAR</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<%- include('../partials/footer.ejs') %>
+
+</html>

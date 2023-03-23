@@ -1,0 +1,38 @@
+<%- include('../partials/header.ejs') %>
+
+    <%- include('../partials/menu.ejs') %>
+
+        <div class="container mt-4">
+
+            <div class="card">
+                <div class="card-header">
+                    LISTAGEM DE CALCADOS
+                </div>
+            </div>
+
+            <% calcados.data.forEach(calcados=>{
+                %>
+
+                <div class="card mt-2 p1">
+                    <div class="card-body">
+                        <h5>
+                            <%= calcados.nome_calcado %>
+                        </h5>
+                        <p>Marca: <%= calcados.marca_calcado %> <br>
+                                Valor: <%= calcados.valor_calcado %>
+                        </p>
+                    </div>
+
+                </div>
+                <% }) %>
+
+        </div>
+
+
+
+
+        </body>
+
+        <%- include('../partials/footer.ejs') %>
+
+            </html>
