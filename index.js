@@ -34,6 +34,52 @@ app.get('/listagemCalcados', (req, res)=>{
     });
 });
 
+app.get('/editarCalcado/:id_calcado', (req, res)=>{
+
+    let {id_calcado} = req.params;
+
+    urlListarCalcadoPK = `http://localhost:3000/listarCalcadoPK/${id_calcado}`
+
+    axios.get(urlListarCalcadoPK)
+        .then((response)=>{
+            let calcado = response.data;
+            //console.log(categoria.data);
+            res.render('calcado/editarCalcado.ejs', {calcado});
+
+        });
+
+});
+
+app.post('/editarCalcado', (req, res)=>{
+
+    //console.log(req.body);
+
+    let urlEditar = 'http://localhost:3000/alterarCalcados';
+
+    axios.put(urlEditar, req.body)
+        .then((response)=>{
+            res.redirect('/listagemCalcados');
+        });
+
+});
+
+app.get('/excluirCalcado/:id_calcado', (req, res)=>{
+
+    //console.log(req.body);
+
+    let {id_calcado} = req.params
+
+    let urlExcluir = `http://localhost:3000/excluirCalcados/${id_calcado}`;
+
+    axios.delete(urlExcluir, req.body)
+        .then((response)=>{
+            res.redirect('/listagemCalcados');
+        });
+
+});
+
+
+
 app.listen(3001, ()=>{
     console.log("SERVIDOR FRONTEND RODANDO EM - http://localhost:3001");
 });

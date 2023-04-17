@@ -1,0 +1,54 @@
+<%- include('../partials/header.ejs') %>
+
+<body>
+
+    <div class="container">
+
+        <%- include('../partials/menu.ejs') %>
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3>EDITAR CALÇADO</h3>
+            </div>
+
+            <div class="card-body">
+
+                <form action="/editarCalcado" method="post">
+
+                    <label for="id_calcado"></label>
+                    <input 
+                    class="form-control" type="text" 
+                    name="nome_calcado" id="nome_calcado"
+                    value="<%= calcado.data.nome_calcado %>">
+
+                    <input 
+                    class="form-control mt-4" type="text" 
+                    name="marca_calcado" id="marca_calcado"
+                    value="<%= calcado.data.marca_calcado %>">
+
+                    <input 
+                    class="form-control mt-4" type="text" 
+                    name="valor_calcado" id="valor_calcado"
+                    value="<%= calcado.data.valor_calcado %>">
+
+                    <input 
+                    type="hidden" 
+                    name="id_calcado" 
+                    value="<%= calcado.data.id_calcado %>">
+
+                    <button class="btn btn-success mt-2">EDITAR</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<%- include('../partials/footer.ejs') %>
+
+</html>
